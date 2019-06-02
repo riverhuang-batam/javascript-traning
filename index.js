@@ -161,3 +161,43 @@ result2 ="*" +" "+ result2 +"*"
 for(let i = 0; i <= 5; i++){
     if(i % 2 !== 0) console.log(i)
 }
+let c= 0;
+while(c<=5){
+    if(c%2 !== 0) console.log(c)
+    c++;
+}
+let d=0;
+if(d%2==0 && d >= 0){
+    console.log('positif genap')
+}
+else if( d%1==0 && d >= 0){
+    console.log('positif ganjil')
+}
+else if (d%2==0 && d <= 0){
+    console.log('negatif genap')
+}
+else{
+    console.log("negatif ganjil")
+}
+let e = 9;
+do{
+    if(e%2 !== 0)console.log(e)
+    e++;
+}while(e <=5);
+
+const persons={
+    name: "river",
+    age: 18
+}
+for(let index in persons)
+console.log(index, persons[index])
+
+const colors=['red','green','yellow']
+for(let index1 of colors)
+console.log(index1)
+
+let z = "*";
+while(z.length<10){
+    console.log(z)
+    z= z+"*"
+}
