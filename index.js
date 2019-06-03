@@ -245,21 +245,102 @@ function max(a,b){
          return 'Buzz'
      return input;
  }
-checkSpeed(180);
+checkSpeed(71);
  function checkSpeed(speed){
     const speedLimit=70;
     const kmPerLimit=5;
-     if(speed <= speedLimit)
-     console.log('ok')
-     else{
+     if(speed <= speedLimit + kmPerLimit){
+
+        console.log('ok')
+        return;
+     }
      const points =Math.floor((speed-speedLimit))/kmPerLimit
     if(points>=12)
     console.log('your license is suspended');
     else
     console.log('points', points);
-    
-     }
-     
  }
+ const array = [null, undefined, '', 0,1,2,3]
+ console.log(countTruthy(array));
+ function countTruthy(array){
+     let count  = 0;
+     for(let value of array)
+        if (value)
+        count++;
+        return count;
+ }
+ const movie ={
+     title: 'a',
+     releaseYear: 2018,
+     rating: 4.5,
+     director: 'b'
+ }
+ showProperties(movie)
 
- 
+ function showProperties(obj){
+     for(let show in obj)
+     if(typeof obj[show] ==='string')
+     console.log(show, obj[show])
+ }
+ console.log(sum(10))
+ function sum(limit){
+     let sum=10;
+     for(let g = 0; g<= limit; g++)
+    if(g%3 === 0 || g%5 === 0)
+    sum += g;
+    return sum
+ }
+showNumber(10);
+function showNumber(limit){
+    for(let j =0; j<=limit; j++){
+    // if( j%2 === 0)
+    // console.log(j, 'EVEN')
+    // else console.log(j,"ODD")
+        const message =(j %2 === 0) ? 'EVEN' : 'odd'
+        console.log(j, message)
+}
+}
+const marks = [100, 80, 100];
+console.log(calculateGrade(marks));
+
+function calculateGrade(marks){
+  const average = calculateAverage(marks)
+
+    if(average <= 59)
+    return 'F'
+    if(average <= 69)
+    return "D"
+    if(average <= 79)
+    return "C"
+    if(average<= 89)
+    return "B"
+    if(average <= 100)
+    return "A"
+}
+
+function calculateAverage(array){
+    let sum = 0;
+    for(let h of array)
+    sum += h;
+    return sum / array.length;
+}
+
+const marks1 = [60, 80, 100];
+console.log(calculateGrades(marks1));
+function calculateGrades(marks1){
+    let sum1 = 0;
+    for(let m of marks1)
+    sum1 += m;
+    let average1= sum1 / marks1.length;
+  
+      if(average1 <= 59)
+      return 'F'
+      if(average1 <= 69)
+      return "D"
+      if(average1 <= 79)
+      return "C"
+      if(average1<= 89)
+      return "B"
+      if(average1 <= 100)
+      return "A"
+  }
