@@ -201,3 +201,65 @@ while(z.length<10){
     console.log(z)
     z= z+"*"
 }
+
+let f=0;
+while(f<=10){
+    if(f===5) break;
+    if(f%2 ==0){
+    f++;
+    continue}
+    console.log(f)
+    f++;
+}
+
+let equalNum = max(3,2)
+console.log(equalNum)
+
+function max(a,b){
+    return (a>b) ? a : b;
+ }
+ function max(a,b){
+     return(a<b) ? a:b;
+ }
+
+ let image = isLandScape(800,600)
+ console.log(image)
+ 
+ function isLandScape(width,height){
+    //  if(width>height) return true;
+    //  else return false (you can use this too but the below code is more shorter)
+     return(width>height);
+ }
+
+ const output = fizzBuzz(3);
+ console.log(output);
+ function fizzBuzz(input){
+    if(typeof input !== 'number')
+    return 'NaN'
+    if ((input % 3 === 0) && (input % 5 === 0))
+     return 'FizzBuzz'
+    if(input%3===0)
+         return 'Fizz'
+     
+     if( input % 5 ===0)
+         return 'Buzz'
+     return input;
+ }
+checkSpeed(180);
+ function checkSpeed(speed){
+    const speedLimit=70;
+    const kmPerLimit=5;
+     if(speed <= speedLimit)
+     console.log('ok')
+     else{
+     const points =Math.floor((speed-speedLimit))/kmPerLimit
+    if(points>=12)
+    console.log('your license is suspended');
+    else
+    console.log('points', points);
+    
+     }
+     
+ }
+
+ 
