@@ -146,13 +146,13 @@ else console.log('unknown User')
 let b= 0.1 + 0.2;
 console.log(b == 0.3)
 
-var results = "*"
+let results = "*"
 while(results.length <=7){
     console.log(results)
     results =results + "*"
 }
 
-var result2 = "*"
+let result2 = "*"
 while (result2.length <=10){
 console.log(result2)
 result2 ="*" +" "+ result2 +"*"
@@ -344,3 +344,27 @@ function calculateGrades(marks1){
       if(average1 <= 100)
       return "A"
   }
+
+showStars(19)
+function showStars(rows){
+    for(let row = 1; row<= rows; row++){
+    let pattern = '';
+    for(let n = 0; n< row; n++)
+    pattern += '*';
+    console.log(pattern)
+    }
+}
+
+showPrimes(20);
+function showPrimes(limiter){
+    for(let number1 = 2; number1<= limiter; number1++){
+        let isPrime = true;
+        for(let factor =2; factor< number1; factor++){
+            if(number1 % factor === 0){
+            isPrime =false;
+                break;
+        }
+        }
+        if (isPrime) console.log(number1)
+    }
+}
