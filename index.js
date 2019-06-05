@@ -381,7 +381,23 @@ const circle={
     }
 }
 circle.draw();
+for(let key in circle)
+console.log(key, circle[key])
 
+for (let key of Object.keys(circle))
+console.log(key)
+for (let entry of Object.entries(circle))
+console.log(entry)
+if ('radius' in circle) console.log('yes')
+
+// const another1 ={};
+// for (let key in  circle)
+// another1[key] = circle[key]
+
+// const another1 = Object.assign({},circle)
+// {bisa ditambah ke object jika diisi}
+const another1 = {...circle}
+console.log(another1)
 function createCircle(radius){ //factory function
     return{
         radius,
@@ -415,3 +431,64 @@ circle4.draw= function(){}
 // delete circle4.color
 // delete circle4.draw
 console.log(circle4)
+
+Circle.call({},1)
+Circle.apply({},[1,2,3])
+
+let obj ={value:10}
+function increase(obj){
+    obj++;
+}
+increase(obj);
+console.log(obj);
+
+const message1 = ' This is my \'First \nMessage '
+const another2 = new String('hi')
+
+const name4 ='river'
+const message2 = 'Hi' + name + '\n' //tidak disarankan 
+
+const another3 = 
+`hi ${name4} i am ${10+8} years old
+
+thank you for using my web application
+
+regards,
+river`
+
+const now = new Date();
+const date1 = new Date('june 6 2019 09:00');
+const date2 = new Date(2018, 5, 6, 3);
+
+now.setFullYear(2019)
+
+let add= {
+    city: 'batam',
+    address: 'batam center',
+    zipcode: 29444
+}
+
+function showAddress(add){
+    for(let key in add)
+    console.log(key, add[key])
+}
+showAddress(add)
+
+
+let address = createAddress('batam', 'batam center', 29444)
+console.log(address)
+function createAddress(city, address, zipcode){ //factory function
+    return{
+        city,
+        address,
+        zipcode
+    }
+}
+ let address1 = new Address('a', 'b', 'c')
+ console.log(address1)
+function Address(street, city, zipcode){ //constructor function
+    this.city = street;
+    this.address = address;
+    this.zipcode = zipcode;
+}
+
