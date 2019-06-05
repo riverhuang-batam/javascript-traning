@@ -368,3 +368,50 @@ function showPrimes(limiter){
         if (isPrime) console.log(number1)
     }
 }
+
+const circle={
+    radius :1,
+    location:{
+        x:1,
+        y:1
+    },
+    isVisible: true,
+    draw: function(){
+        console.log('draw')
+    }
+}
+circle.draw();
+
+function createCircle(radius){ //factory function
+    return{
+        radius,
+        draw1(){
+            console.log('draw')
+        }
+    };
+}
+const circle1 =createCircle(1)
+console.log(circle1)
+
+const circle2 = createCircle(2)
+console.log(circle2)
+
+function Circle(radius){
+    this.radius = radius;
+    this.draw = function() {
+        console.log('draw');
+    }
+    return this
+}
+const another = new Circle(1);
+console.log(another)
+
+
+const circle4 = {
+    radius:1
+};
+circle4.color="yellow"
+circle4.draw= function(){}
+// delete circle4.color
+// delete circle4.draw
+console.log(circle4)
