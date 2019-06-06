@@ -492,3 +492,55 @@ function Address(street, city, zipcode){ //constructor function
     this.zipcode = zipcode;
 }
 
+let address3 = new Address('a','b','c') //object equality
+let address4 = new Address('a','b','c')
+let address5 = address3
+console.log(areEqual(address3, address4));
+console.log(areSame(address3, address4))
+console.log(areSame(address3, address5))
+function areEqual(address3, address4){
+    return address3.city === address4.city &&
+    address3.address === address4.address &&
+    address3.zipcode === address4.zipcode
+
+}
+
+function areSame(address3, address4){
+    return address3 === address4
+}
+
+let post = { //blog post object
+    title:'a',
+    body:'b',
+    author:'c',
+    views:10,
+    comments:[
+        {author:'a', body:'b'},
+        {author:'c', body:'d'}
+    ],
+    isLive: true
+}
+console.log(post)
+
+let post1 = new Post('a', 'b', 'c')
+console.log(post)
+
+function Post(title,body,author){
+    this.title=title;
+    this.body=body;
+    this.author=author;
+    this.views = 0;
+    this.comments =[];
+    this.isLive =false;
+}
+
+//price range object
+let priceRanges = [
+    {label:'$', toolTip:'Inexpensive', minPerPerson: 0, maxPerPerson:10},
+    {label:'$$', toolTip:'Moderate', minPerPerson: 11, maxPerPerson:20},
+    {label:'$$$', toolTip:'Expensive', minPerPerson: 21, maxPerPerson:50}
+]
+
+let restaurants = [
+    {averagePerson: 5}
+]
