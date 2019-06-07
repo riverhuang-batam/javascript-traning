@@ -231,20 +231,20 @@ function max(a,b){
      return(width>height);
  }
 
- const output = fizzBuzz(3);
- console.log(output);
- function fizzBuzz(input){
-    if(typeof input !== 'number')
-    return 'NaN'
-    if ((input % 3 === 0) && (input % 5 === 0))
-     return 'FizzBuzz'
-    if(input%3===0)
-         return 'Fizz'
+//  const output = fizzBuzz(3);
+//  console.log(output);
+//  function fizzBuzz(input){
+//     if(typeof input !== 'number')
+//     return 'NaN'
+//     if ((input % 3 === 0) && (input % 5 === 0))
+//      return 'FizzBuzz'
+//     if(input%3===0)
+//          return 'Fizz'
      
-     if( input % 5 ===0)
-         return 'Buzz'
-     return input;
- }
+//      if( input % 5 ===0)
+//          return 'Buzz'
+//      return input;
+//  }
 checkSpeed(71);
  function checkSpeed(speed){
     const speedLimit=70;
@@ -623,3 +623,147 @@ console.log(numbers3)
 numbers2.forEach((numbers2,index) =>
     console.log(index,numbers2)
 )
+
+const numbers4 = [1,2,3]
+const join = numbers4.join('-')
+console.log(join)
+
+const message3 = 'this is my message for you'
+const part = message3.split(' ')
+console.log(part)
+const join2 = part.join('-')
+console.log(join2)
+
+
+const numbers5 = [5,1,2,3,4]
+numbers5.sort()
+console.log(numbers5)
+numbers5.reverse()
+console.log(numbers5)
+
+const course2=[
+    {id:1, name:'Node,js'},
+    {id:2, name:'JavaScript'}
+];
+
+course2.sort(function(a,b){
+    // a < b = -1
+    // a > b = 1
+    // a === b =1
+    // if (a.name < b.name) return -1;
+    // if (a.name > b.name) return 1;
+    const nameA = a.name.toLowerCase();
+    const nameB = b.name.toLowerCase();
+
+    if (nameA < nameB) return -1;
+    if (nameA > nameB) return 1;
+    return 0;
+});
+console.log(course2)
+
+
+const number2 =[1,0,-1,-23,2,3,4]
+const filtered = number2
+.filter(value => value >= 0)
+.map(n => ({value:n}))
+.filter(obj => obj.value > 1)
+.map(obj => obj.value);
+    
+console.log(filtered)
+
+const number3 = [1,2,3,4]
+
+const sum2 = number3.reduce((accumulator, currentValue)=>accumulator + currentValue)
+console.log(sum2)
+const numbers6 = arrayFromRange(-10,-4)
+console.log(numbers6);
+function arrayFromRange(min,max){
+    
+    const fil = []
+    for(let i = min; i <= max; i++)
+    fil.push(i);
+    return fil
+}
+
+const number4 = [1,2,3,4];
+console.log(includes(numbers4,-1))
+function includes(array, searchElement){
+    for( let element of array)
+    if(element === searchElement)
+    return true;
+    return false
+}
+
+const number5 = [1,2,3,4,11,1,6,1]
+const output2 = excepts(number5, [1])
+console.log(output2)
+
+function excepts(array, excluded){
+    const output2 = [];
+    for(let element of array)
+    if(!excluded.includes(element))
+    output2.push(element)
+    return output2
+}
+const numbers8 = [1,2,3,4];
+const output4 = move(numbers8, 0,2);
+console.log(output4)
+function move(array, index, offset){
+    const position = index + offset;
+    if(position >= array.length || position <= 0){
+        console.error('invalid offset.');
+        return;
+    }
+    const output4 = [...array];
+    const element = output4.splice(index,1)[0];
+    output4.splice(index+offset, 0, element)
+    return output4
+}
+
+const number6 = [1,2,3,4,1]
+const count1 = countOccurrences(number6, 1)
+console.log(count1)
+
+function countOccurrences(array, searchElement){
+    // let count1 = 0;
+    // for (let element of array)
+    // if (element === searchElement)
+    // count1++;
+    // return count1
+
+    return array.reduce((accumulator, current)=>{
+        const occurrence = (current === searchElement) ? 1:0
+        console.log(accumulator, current, searchElement)
+        return accumulator + occurrence
+    },0)
+}
+const number7 = [1,2,3,4]
+const max1 = getMax([1,2,3,4,5])
+console.log(max1);
+
+function getMax(array){
+    if(array.length === 0) return undefined;
+
+    // let max1 =array[0];
+    // for( let i = 1; i < array.length; i++)
+    // if (array[i] > max1)
+    // max1 = array[i];
+    // return max1
+    
+    return array.reduce((a,b) => (a > b) ? a : b)
+}
+
+const movie1 = [
+    {title:'a', year:2018, rating: 4.5},
+    {title:'b', year:2018, rating: 3.8},
+    {title:'c', year:2018, rating: 3.9},
+    {title:'d', year:2018, rating: 4.0}
+];
+
+const filterMovie = movie1
+.filter(movie1 => movie1.rating >=4 && movie1.year === 2018)
+.sort((a,b) => a.rating - b.rating)
+.reverse()
+.map(m=> m.title)
+
+console.log(filterMovie)
