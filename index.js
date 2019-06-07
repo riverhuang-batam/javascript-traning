@@ -544,3 +544,82 @@ let priceRanges = [
 let restaurants = [
     {averagePerson: 5}
 ]
+
+
+let numbers= [1,2,3,4,5,6]
+
+numbers.push(12,21) //last
+numbers.unshift(88,99) //beginning
+numbers.splice(2,0,'a','b') 
+console.log(numbers)
+
+
+let numbers1 = [1,2,4,1,3,5] //finding array primitive
+console.log(numbers1.indexOf(1))
+console.log(numbers1.indexOf(1,2)) //begin finding the array on the second
+console.log(numbers1.lastIndexOf(1))
+
+console.log(numbers1.indexOf(1) !== -1)
+console.log(numbers1.includes(1))
+
+let courses=[
+    {id:1, name:'a'},
+    {id:2, name:'b'}
+]
+
+const course = courses.find(function(course){ //use findIndex to find where the id or names place
+    return course.name === 'a'
+});
+const course1 = courses.find(course => course.name === 'a')
+console.log(course)
+console.log(course1)
+
+
+const numberss= [1,2,3,4] //removing array element
+const last = numberss.pop()
+const first = numberss.shift()
+const middle = numberss.splice(1,1)
+console.log(numberss)
+
+
+let noNumbers = [1,2,3,4]; //emptying array
+let anotherN = noNumbers;
+// 1st solution
+noNumbers = [];
+
+//2nd solution
+// noNumbers.length=0;
+
+//3rd solution
+// noNumbers.splice(0,noNumbers.length)
+
+//4th solution
+// while(noNumbers.length > 0)
+// noNumbers.pop()
+
+console.log(noNumbers)
+console.log(anotherN)
+
+
+const firstAr = [{id:1}]
+const secondAr = [5,6]
+const combined = firstAr.concat(secondAr)
+firstAr[0].id = 10;
+const slice = combined.slice(2,4)
+console.log(combined)
+console.log(slice)
+
+
+const firstArr = [1,2,3,4]
+const secondArr = [5,6]
+const combined1 = [...firstArr, ... secondArr]
+console.log(combined1)
+
+
+const numbers2 = [1,2,3]
+for(let numbers3 of numbers2)
+console.log(numbers3)
+
+numbers2.forEach((numbers2,index) =>
+    console.log(index,numbers2)
+)
