@@ -767,3 +767,59 @@ const filterMovie = movie1
 .map(m=> m.title)
 
 console.log(filterMovie)
+
+walk()
+function walk(){ // function declaration = after variable
+    console.log('walk');
+};
+
+const run = function(){ //function expression = before variable
+    console.log('run');
+};
+let move1 = run;
+run();
+move1();
+
+function sum1(){
+    let total = 0;
+    for(let value of arguments)
+    total += value
+    return total
+}
+
+console.log(sum1(1,2,3,5,6,5,7,57))
+
+function sum3(discount,...price){
+    const total = price.reduce((a,b)=> a+b)
+    return total * (1- discount)
+}
+console.log(sum3(0.1,3,4,10,6,5))
+
+function interest(principal, rate= 2000, years= 10){
+    return principal * rate/100 * years;
+}
+console.log(interest(4000))
+
+const human = {
+    firstName:'river',
+    lastName:'huang'
+}
+
+console.log(`${human.firstName} ${human.lastName}` )
+
+const person1 ={
+    firstName:'river',
+    lastName:'huang',
+    get fullName(){
+        return `${person.firstName} ${person.lastName}`
+    },
+    set fullName(value){
+        const parts = value.split(' ')
+        this.firstName = parts[0]
+        this.lastName = parts[1]
+    }
+}
+
+person.fullName = 'john smith'
+
+console.log(person1)
