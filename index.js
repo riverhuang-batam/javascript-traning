@@ -820,6 +820,109 @@ const person1 ={
     }
 }
 
-person.fullName = 'john smith'
+person1.fullName = 'john smith'
 
 console.log(person1)
+
+//error handling
+// const person2 ={
+//     firstName:'river',
+//     lastName:'huang',
+
+//     set fullName(value){
+       
+//         if (typeof value !== 'string')
+//             throw new Error('value is not a string.')
+
+//         const part =value.split(' ')
+//         if (part.length !== 2)
+//         throw new Error('Enter a first and last name')
+        
+//         this.firstName = parts[0]
+//         this.lastName= parts[1]
+//     }
+// }
+
+// try {
+//     person2.fullName = '';
+// }
+// catch(e){
+//     alert(e)
+// }
+
+// console.log(person2)
+
+const color1 = 'red';
+
+function start(){
+const message='hi';
+const color1= 'blue';
+console.log(color1)
+}
+
+function stop(){
+    const message='stop';
+}
+start();
+
+const video = {
+    title:'a',
+    tags: ['a','b','c'],
+    showTags(){
+        this.tags.forEach(function(tag){
+            console.log(this.title, tag);
+        }, this);
+    }
+};
+
+video.showTags();
+const video1 = {
+    title:'a',
+    tags: ['a','b','c'],
+    showTags(){
+        this.tags.forEach(tag=>{
+            console.log(this.title, tag);
+        });
+    }
+};
+
+video1.showTags();
+
+console.log(sum([1,2,3,4]))
+function sum(...items){
+    if(items.length === 1 && Array.isArray(items[0]))
+    items = [...items[0]]
+    return items.reduce((a,b)=> a+b)
+}
+
+const circle5 = {
+    radius:1,
+    get area(){
+        return Math.PI * this.radius * this.radius
+    }
+};
+
+console.log(circle5.area)
+
+const number8 = [1,2,3,4];
+
+const count2 = countOccurrences(numbers8,1);
+console.log(count2);
+
+try{
+    const numbers = [1,2,3,4];
+    const count = countOccurrences(null, 1)
+    console.log(count)
+}
+catch(e){
+    console.log(e.message)
+}
+
+function countOccurrences(array, searchElement){
+    if(!Array.isArray(array))
+        throw new Error('invalid array')
+    return array.reduce((accumulator, current)=>{
+        const occurrence = (current === searchElement) ? 1 : 0;
+        return accumulator + occurrence;
+    },0)
+}
