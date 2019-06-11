@@ -167,4 +167,53 @@ console.log(nomor)
 //     holo++;
 // }
 
-// console.log(text)
+
+let anka = [1,2,3,4,5]
+anka = ["start",...angka,"end"]
+console.log(anka)
+
+
+
+    
+showS(5)
+function showS(rows){
+    for(let i = 0; i<= rows; i++){
+        let pattern = ''
+    for (let j = 0; j <= i; j++)
+        pattern += '*'
+        console.log(pattern)
+    }
+}
+
+let i = [1,2,3,4]
+i.forEach(x=>{
+    x= `${i}`
+    console.log(i)
+})
+
+let j = [{id:1, name:'river'},{id:2,name:'huang'}]
+j.reverse(j.id)
+console.log(j)
+
+let nifa = 0;
+do{
+    if(nifa%2 !== 0) console.log(nifa);
+    nifa++
+    
+}while(nifa<=10)
+
+const human2=[
+    {id:1,
+     name:'river'
+    },{id:2,
+        name:'huang'
+    },{id:3,
+        name:'river'
+    }
+]
+for(let i in human2)
+    console.log(i ,human2[i])
+
+const colors1 =['red','blue', 'green']
+for(let i in colors1)
+    console.log(i, colors1[i])

@@ -800,12 +800,12 @@ function interest(principal, rate= 2000, years= 10){
 }
 console.log(interest(4000))
 
-const human = {
+const human1 = {
     firstName:'river',
     lastName:'huang'
 }
 
-console.log(`${human.firstName} ${human.lastName}` )
+console.log(`${human1.firstName} ${human1.lastName}` )
 
 const person1 ={
     firstName:'river',
