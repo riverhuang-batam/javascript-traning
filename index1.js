@@ -67,21 +67,21 @@ const students = [{
     grade: 50
 }]
 
-// const student = students
-// .filter( students => students.grade >= 55)
-// console.log(student)
-// students.sort((a,b) => a.grade - b.grade)
-// console.log(students)
-// students.sort((a,b)=> b.grade - a.grade)
+const student = students
+.filter( students => students.grade >= 55)
+console.log(student)
+students.sort((a,b) => a.grade - b.grade)
+console.log(students)
+students.sort((a,b)=> b.grade - a.grade)
 
 
 students.push({id:5 , name: 'jolie', grade: 90 })
 console.log(students)
 
-// students.forEach(students=>{
-//     const student  = `this is my ${students.name} and this is my ${students.grade}`
-//     console.log(student)
-// })
+students.forEach(students=>{
+    const student  = `this is my ${students.name} and this is my ${students.grade}`
+    console.log(student)
+})
 
 // students.shift(students =>{students.grade >=50
    
@@ -217,3 +217,72 @@ for(let i in human2)
 const colors1 =['red','blue', 'green']
 for(let i in colors1)
     console.log(i, colors1[i])
+
+    let k =0;
+    for(let i=0; i<100; i++){
+        k++
+    }
+    console.log(k)
+showSome(5)
+function showSome(row){
+    for(let i = 0; i<=row; i++){
+        let pattern='';
+    for(let j = 0; j<=i; j++)
+    pattern += '*';
+    console.log(pattern)
+    }
+}
+
+const studentss = [{
+    id: 1,
+    name: 'Budi',
+    grade: 90
+},{
+    id: 2,
+    name: 'Gorge',
+    grade: 74
+}, {
+    id: 3,
+    name: 'Shiva',
+    grade: 24
+}, {
+    id: 4,
+    name: 'James',
+    grade: 50
+}]
+
+studentss.push({id: 5,name: 'Jmes',grade: 70})
+console.log(studentss)
+
+const student3 = 
+studentss.filter(studentss => studentss.grade >= 50)
+console.log(student3)
+
+student3.sort((a,b)=> a.grade - b.grade)
+console.log(student3)
+
+student3.forEach(student => {
+    const students = `this is my name ${student.name} & ${student.id}`
+    console.log(students)
+}
+)
+
+const student4 = studentss.filter(studentss =>studentss.grade <=50)
+console.log(student4)
+
+
+const angka5= [1,2,4,5,6]
+const angka6 =angka5
+.filter(x=> x>3)
+console.log(angka6)
+
+let x1 = 5
+for(let i = 0; i <=x1; i++){
+    let pattern ="\n"
+
+for(let o = 1; o <= i; o++)
+pattern += "*"
+
+console.log(pattern)
+}
+
